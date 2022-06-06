@@ -5,10 +5,12 @@ const createClub = async (req, res) => {
     const { name, budget } = req.body
     const nameTransform = name.toLowerCase()
 
-    const newClub = await Club.create({ nameTransform, budget })
+    const newClub = await Club.create({ name: nameTransform, budget })
     res.status(200).json({ msg: '¡Club Creado con exito!', club: newClub })
   } catch (error) {
-    throw new Error(error)
+    return res.status(400).json({
+      msg: `Error al crear el club`,
+    })
   }
 }
 

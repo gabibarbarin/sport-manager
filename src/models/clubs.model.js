@@ -4,7 +4,7 @@ const clubSchema = mongoose.Schema(
   {
     name: {
       type: String,
-      require: [true, 'Nombre de club requerido'],
+      require: true,
     },
     budget: {
       type: Number,

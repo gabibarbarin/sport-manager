@@ -2,11 +2,20 @@ const mongoose = require('mongoose')
 
 const peopleSchema = mongoose.Schema(
   {
-    name: {
+    fullName: {
       type: String,
       require: true,
     },
-    lastname: {
+    nie: {
+      type: String,
+      require: true,
+      unique: true,
+    },
+    email: {
+      type: String,
+      require: true,
+    },
+    mobile: {
       type: String,
       require: true,
     },
