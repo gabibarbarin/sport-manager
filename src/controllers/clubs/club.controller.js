@@ -79,9 +79,9 @@ const editBudgetClub = async (req, res) => {
 const getPlayersByClub = async (req, res) => {
   try {
     const { _id, limit = 5, from = 0, fullName } = req.query
-    const query = fullName ? { club: _id, fullName: fullName } : { club: _id }
+    const params = { _id, limit, from, fullName }
 
-    const [count, users] = await getPlayersByClubService(query, limit, from)
+    const [count, users] = await getPlayersByClubService(params)
 
     if (users) {
       return res.status(200).json({ count, users })

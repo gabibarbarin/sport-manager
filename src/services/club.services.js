@@ -49,8 +49,14 @@ const editBudgetClubService = (club, budget) => {
   return club.budget
 }
 
-const getPlayersByClubService = (query, limit, from) => {
-  return Promise.all([People.countDocuments(query), People.find(query).limit(Number(limit)).skip(Number(from))])
+const getPlayersByClubService = async ({ _id, limit, from, fullName }) => {
+  if (fullName) {
+    const query = { club: _id, fullName: fullName }
+    return await Promise.all([People.countDocuments(query), People.find(query)])
+  }
+
+  const query = { club: _id }
+  return await Promise.all([People.countDocuments(query), People.find(query).limit(Number(limit)).skip(Number(from))])
 }
 
 module.exports = {
