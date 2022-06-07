@@ -3,8 +3,8 @@
 ## Instrucciones:
 
     -Instalación: npm install
-    -Arrancar el servidor: npm run dev
-    -Arrancar los test: npm run test
+    -Iniciar el servidor: npm run dev
+    -Iniciar los test: npm run test
 
 ## Modulo para envio de correos electronicos (Nodemailer + mailtrap):
 

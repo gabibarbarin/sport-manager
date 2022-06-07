@@ -28,9 +28,9 @@ const sendEmail = (email = '', action = '', typePeople = '') => {
 
   transport.sendMail(message, (err, info) => {
     if (err) {
-      return true
-    } else {
       return false
+    } else {
+      return true
     }
   })
 }

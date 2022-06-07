@@ -4,6 +4,7 @@ const People = require('../models/peoples.model')
 const uniqueNameClubValidation = async (nameClub = '') => {
   const nameOption = nameClub.toLowerCase()
   const club = await Club.findOne({ name: nameOption })
+
   if (club) {
     throw new Error(`Ya existe un club con el nombre ${nameOption}`)
   }

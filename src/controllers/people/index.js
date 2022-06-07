@@ -1,3 +1,3 @@
-const { createPeople } = require('./createPeople.controller')
+const { createPeople } = require('./people.controller')
 
 module.exports = { createPeople }

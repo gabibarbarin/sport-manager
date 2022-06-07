@@ -31,7 +31,7 @@ router
 
 router
   .route('/add-people')
-  .post(
+  .put(
     [
       personValidationsClub,
       clubValidationsClub,
@@ -46,7 +46,7 @@ router
 
 router
   .route('/remove-people')
-  .post([personValidationsClub, clubValidationsClub, validationResults, personBelongsToClub], removePeopleToTheClub)
+  .put([personValidationsClub, clubValidationsClub, validationResults, personBelongsToClub], removePeopleToTheClub)
 
 router
   .route('/budget')
